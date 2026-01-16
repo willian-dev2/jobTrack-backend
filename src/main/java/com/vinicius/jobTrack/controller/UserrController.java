@@ -39,6 +39,7 @@ public class UserrController {
         );
         // retornará um token JWT já formatado para ser chamado nas nossas autenticações
         return ResponseEntity.ok("Bearer " + jwtUtil.generateToken(authentication.getName()));
+
     }
 
     // Esse Get irá retornar a lista de usuarios cadastrados.OBS: precisa estar logado a um usuario e passar o token
