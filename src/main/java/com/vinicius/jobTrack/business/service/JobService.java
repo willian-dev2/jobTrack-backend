@@ -98,4 +98,8 @@ public class JobService {
 
     }
 
+    public void deleteJob (String jobTitle, String companyName) {
+        jobRepository.deleteByJobTitleAndCompanyName(jobTitle, companyName);
+    }
+
 }

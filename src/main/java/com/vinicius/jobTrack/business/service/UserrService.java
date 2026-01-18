@@ -63,5 +63,9 @@ public class UserrService {
                 .toList();
     }
 
+    public void deleteUserByEmail(String email) {
+        userRepository.deleteByEmail(email);
+    }
+
 
 }
