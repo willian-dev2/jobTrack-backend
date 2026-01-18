@@ -48,4 +48,10 @@ public class UserrController {
         return userService.listUser();
     }
 
+    // Método para deletar usuário
+    @DeleteMapping("/deleteUser/{email}")
+    public ResponseEntity<Void> deleteUser (@PathVariable String email) {
+        userService.deleteUserByEmail(email);
+        return ResponseEntity.ok().build();
+    }
 }

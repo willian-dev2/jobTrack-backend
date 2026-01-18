@@ -1,6 +1,7 @@
 package com.vinicius.jobTrack.repository;
 
 import com.vinicius.jobTrack.model.Userr;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +15,8 @@ public interface UserRepository extends JpaRepository<Userr, Long> {
     Optional<Userr> findByEmail(String email);
 
     Optional<Userr> findById(Long id);
+
+    @Transactional
+    void deleteByEmail(String email);
 
 }

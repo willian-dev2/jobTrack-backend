@@ -24,9 +24,7 @@ public class Job {
     private ApplicationStatus status;
     @Column(name = "appliedAt", length = 100)
     private String appliedAt; // data e hora da candidatura
-
-    // efeito cascata
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     // cria uma coluna que referencia o id da tabela userId
     @JoinColumn(name = "userId", referencedColumnName = "id")
     @JsonIgnore

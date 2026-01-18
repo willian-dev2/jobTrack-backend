@@ -61,4 +61,11 @@ public class JobController {
 
         return ResponseEntity.ok(response);
     }
+
+    @DeleteMapping("/deleteJob/{companyName}/{jobTitle}")
+    public ResponseEntity<Void> deleteJob (@PathVariable String companyName,
+                                           @PathVariable String jobTitle) {
+        jobService.deleteJob(jobTitle, companyName);
+        return ResponseEntity.ok().build();
+    }
 }

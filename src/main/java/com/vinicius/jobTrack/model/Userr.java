@@ -27,7 +27,7 @@ public class Userr {
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY) // será visivel apenas na entrada e nunca na saida
     @Column(name = "password") // faz o campo obrigatório
     private String password;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Job> jobs;
 
 }

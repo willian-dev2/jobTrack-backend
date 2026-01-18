@@ -2,6 +2,7 @@ package com.vinicius.jobTrack.repository;
 
 import com.vinicius.jobTrack.model.Job;
 import com.vinicius.jobTrack.model.Userr;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -19,5 +20,7 @@ public interface JobRepository extends JpaRepository<Job, Long> {
 
     boolean existsByUserAndCompanyNameAndJobTitle(Userr user, String companyName, String jobTitle);
 
+    @Transactional
+    void deleteByJobTitleAndCompanyName(String jobTitle, String companyName);
 
 }
